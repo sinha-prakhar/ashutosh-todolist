@@ -14,7 +14,12 @@ interface TodoData {
 
 
 // interface for theme
-
+  type Theme = {
+  NavbarTheme: string,
+  backgroundTheme: string,
+  todosNumberParagraph: string,
+  toggleThemeButtonBG: string
+}
 
 
 
@@ -59,6 +64,8 @@ const Page = () => {
   const [theme, settheme] = useState<Theme>({
     NavbarTheme: "bg-zinc-800",
     backgroundTheme: "bg-white",
+    todosNumberParagraph: "text-black",
+    toggleThemeButtonBG: "bg-zinc-700 text-white"
   })
   
 const [todo, setTodo] = useState<string>('');
@@ -156,18 +163,16 @@ const filteredTodos = todos.filter(todo => {
   }, [todos]);
 
 
-  type Theme = {
-  NavbarTheme: string,
-  backgroundTheme: string,
-}
-
-
   const ToggleTheme = () => {
   settheme(theme => ({
     NavbarTheme:
       theme.NavbarTheme === "bg-zinc-800" ? "bg-zinc-400" : "bg-zinc-800",
     backgroundTheme:
-      theme.backgroundTheme === "bg-white" ? "bg-zinc-800" : "bg-white"
+      theme.backgroundTheme === "bg-white" ? "bg-zinc-800" : "bg-white",
+      todosNumberParagraph:
+      theme.todosNumberParagraph === "text-white"? "text-black": "text-white",
+      toggleThemeButtonBG:
+      theme.toggleThemeButtonBG === "bg-zinc-700 text-white"? "bg-white text-black": "bg-zinc-700 text-white"
   }));
 };
 
@@ -225,7 +230,10 @@ const filteredTodos = todos.filter(todo => {
             Add
           </button>
 
-          <button onClick={ToggleTheme}>Toggle theme</button>
+          <button
+          className={`h-9 rounded-sm ml-2 transition-all active:scale-95 md:mt-0 mt-5  shadow-blue-200 font-bold ${theme.toggleThemeButtonBG}`}
+          onClick={ToggleTheme}
+          >Toggle theme</button>
 
         </div>
 
@@ -234,7 +242,7 @@ const filteredTodos = todos.filter(todo => {
 
 
             <div className='helper mb-16 mt-2'>
-              <p className={`font-bold $`} >All todos are {filteredTodos.length} Completed todos are {completedCount} and Active are {progress}</p>
+              <p className={`font-bold ${theme.todosNumberParagraph}`} >All todos are {filteredTodos.length} Completed todos are {completedCount} and Active are {progress}</p>
             </div>
 
 
