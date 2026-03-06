@@ -15,9 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ashutosh — Todo Manager",
   description: "Ashutosh Todo List is your personal todo manager designed to help you plan tasks, set priorities, and boost productivity anytime, anywhere.",
-  icons: {
-    icon: "/logo.paint"
-  }
 };
 
 export default function RootLayout({
@@ -28,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-zinc-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
         {children}
       </body>

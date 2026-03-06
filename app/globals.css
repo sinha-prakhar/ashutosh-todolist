@@ -27,5 +27,5 @@ body {
 
 
 .helper {
-  @apply flex justify-center items-center w-full
+  @apply flex justify-center items-center w-full;
 }
