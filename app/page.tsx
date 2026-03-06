@@ -196,7 +196,7 @@ const Page = () => {
         <main>
 
           <ToastContainer />
-          <div className={`helper w-full mt-30 flex p-1.5 active:scale-99`}>
+          <div className={`helper w-full mt-30 flex p-1.5 active:scale-99 text-black`}>
             <input
               autoCapitalize='words'
               autoComplete='on'
@@ -206,7 +206,7 @@ const Page = () => {
               type="text"
               id='todoInput'
               name='todoInput'
-              className='border border-black bg-white focus:border-blue-600 focus:border-3 h-9 rounded-tl-md rounded-bl-md w-full md:w-1/2 transition-all mr-0 text-black'
+              className='border border-black bg-white focus:border-blue-600 focus:border-3 h-9 rounded-tl-md rounded-bl-md w-full md:w-1/2 transition-all mr-0 text-[#000000]'
               placeholder={placeholder}
               onChange={(e) => {
                 setTodo(e.target.value)
