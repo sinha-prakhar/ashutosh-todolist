@@ -62,7 +62,9 @@ const Navbar = (props: any) => {
 
         <div className="h-px w-full mt-2 mb-2 bg-white"></div>
 
-        <div className={`justify-evenly h-full items-center transition-all ${ShowProgressBar ? "flex" : "hidden"}`}>
+        
+
+        <div className={`justify-evenly h-full items-center transition-all ease-in-out ${ShowProgressBar ? "flex" : "hidden"}`}>
 
 
 
