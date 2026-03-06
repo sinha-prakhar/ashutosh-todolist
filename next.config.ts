@@ -1,23 +1,27 @@
-import type { NextConfig } from "next";
+// it is for browser
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+// import type { NextConfig } from "next";
 
-export default nextConfig;
+// const nextConfig: NextConfig = {
+//   /* config options here */
+// };
+
+// export default nextConfig;
 
 
 
 
-// const repo = "todo-manager"
+// it for git hub pages 
 
-// const nextConfig = {
-//   output: "export",
-//   basePath: `/${repo}`,
-//   assetPrefix: `/${repo}/`,
-//   images: {
-//     unoptimized: true
-//   }
-// }
+const repo = "todo-manager"
 
-// export default nextConfig
+const nextConfig = {
+  output: "export",
+  basePath: `/${repo}`,
+  assetPrefix: `/${repo}/`,
+  images: {
+    unoptimized: true
+  }
+}
+
+export default nextConfig
