@@ -206,7 +206,7 @@ const Page = () => {
               type="text"
               id='todoInput'
               name='todoInput'
-              className='border border-black bg-white focus:border-blue-600 focus:border-3 h-9 rounded-tl-md rounded-bl-md w-full md:w-1/2 transition-all mr-0'
+              className='border border-black bg-white focus:border-blue-600 focus:border-3 h-9 rounded-tl-md rounded-bl-md w-full md:w-1/2 transition-all mr-0 text-black'
               placeholder={placeholder}
               onChange={(e) => {
                 setTodo(e.target.value)
