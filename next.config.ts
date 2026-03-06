@@ -13,7 +13,7 @@
 
 // it for git hub pages 
 
-const repo = "todo-manager"
+const repo = "ashutosh-todolist"
 
 const nextConfig = {
   output: "export",
