@@ -364,9 +364,9 @@ hover:bg-zinc-200 hover:-translate-y-1 duration-300 hover:scale-105 hover:shadow
 
         </main>
 
-        <footer className={`flex justify-center items-center w-full h-20 bg-black text-white fixed bottom-0  mt-20`}>
+        {/* <footer className={`flex justify-center items-center w-full h-20 bg-black text-white fixed bottom-0  mt-20`}>
           This website uses your browser localStorage
-        </footer>
+        </footer> */}
       </motion.div>
     </>
   )
