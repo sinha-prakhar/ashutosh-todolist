@@ -148,9 +148,7 @@ const Page = () => {
 
   useEffect(() => {
     const randomIndex: number = Math.floor(Math.random() * placeholders.length);
-    setInterval(() => {
       setplaceholder(placeholders[randomIndex]);
-    }, 8000);
   }, [])
 
 
@@ -239,7 +237,7 @@ const Page = () => {
             <button
               type="submit"
               aria-label='Add'
-              className='h-9 bg-blue-500 w-18 ml-0 transition-all shadow-blue-200 font-light text-3xl rounded-tr-md rounded-br-md'
+              className='h-9 bg-blue-500 w-18 ml-0 transition-all shadow-blue-200 font-light text-3xl rounded-tr-md rounded-br-md text-black'
               onClick={saveTodo}
               disabled={!todo.trim()}
             >
@@ -257,7 +255,7 @@ const Page = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setFilter("all")}
-                  className={`m-2 p-2 rounded-xl w-30 font-bold transition-all active:scale-95 ${filter === "all" ? "bg-zinc-400 scale-95" : "bg-zinc-300 scale-85"}`}
+                  className={`m-2 p-2 rounded-xl w-30 font-bold transition-all active:scale-95 text-black ${filter === "all" ? "bg-zinc-400 scale-95" : "bg-zinc-300 scale-85"}`}
                   title='Shows all todos'
                   aria-label='All todos'
                 >
@@ -268,7 +266,7 @@ const Page = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setFilter("active")}
-                  className={`m-2 p-2 rounded-xl w-30 font-bold transition-all active:scale-95 ${filter === "active" ? "bg-zinc-400 scale-95" : "bg-zinc-300 scale-85"}`}
+                  className={`m-2 p-2 rounded-xl w-30 font-bold transition-all active:scale-95 text-black ${filter === "active" ? "bg-zinc-400 scale-95" : "bg-zinc-300 scale-85"}`}
                   title='Shows all active todos'
                   aria-label='Active todos'
                 >
@@ -279,7 +277,7 @@ const Page = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setFilter("completed")}
-                  className={`m-2 p-2 rounded-xl w-30 font-bold transition-all active:scale-95 ${filter === "completed" ? "bg-zinc-400 scale-95" : "bg-zinc-300 scale-85"}`}
+                  className={`m-2 p-2 rounded-xl w-30 font-bold transition-all active:scale-95 text-black ${filter === "completed" ? "bg-zinc-400 scale-95" : "bg-zinc-300 scale-85"}`}
                   title='Shows all completed todos'
                   aria-label='Completed todos'
                 >
@@ -301,7 +299,7 @@ const Page = () => {
                         {filter === "all"
                           ? "No todos yet."
                           : filter === "active"
-                            ? "No active tasks 🎉"
+                            ? "No active tasks"
                             : "No completed tasks yet."}
                       </p>
                     </div>
@@ -333,7 +331,7 @@ hover:bg-zinc-200 hover:-translate-y-1 duration-300 hover:scale-105 hover:shadow
                             />
 
                           </div>
-                          <div className={`font-bold w-full transition-all duration-300 
+                          <div className={`font-bold w-full transition-all duration-300  text-black
   ${item.isDone ? "line-through text-gray-500 scale-95" : "scale-100"}`}>
                             {item.value}
                           </div>
@@ -342,7 +340,7 @@ hover:bg-zinc-200 hover:-translate-y-1 duration-300 hover:scale-105 hover:shadow
                         <div className='flex justify-evenly w-full '>
 
 
-                          <button onClick={() => editTodos(item.id)}>
+                          <button onClick={() => editTodos(item.id)} className='text-black font-light'>
                             Edit
                           </button>
 
@@ -362,7 +360,11 @@ hover:bg-zinc-200 hover:-translate-y-1 duration-300 hover:scale-105 hover:shadow
           </div>
 
         </main>
+
       </motion.div>
+        <footer className='static bottom-0 flex justify-center items-center w-full h-20 bg-black text-white'>
+          This website uses your browser localStorage
+        </footer>
     </>
   )
 }

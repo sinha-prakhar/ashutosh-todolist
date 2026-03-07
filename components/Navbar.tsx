@@ -28,8 +28,8 @@ const Navbar = (props: any) => {
     <header>
       <nav className={`items-center justify-between w-full ${props.Theme} p-4`}>
         <div className="flex h-full flex-wrap md:flex-nowrap">
-          <div className="flex items-center md:ml-14 ml-0 w-full mb-5 h-full">
-            <h1 className='text-3xl text-white font-bold'>Ashutosh todo manager</h1>
+          <div className="flex items-center md:ml-14 ml-0 w-full mb-5 h-full justify-center">
+            <h1 className='text-3xl text-white font-bold'>Ashutosh to-do manager</h1>
           </div>
 
           <div className="helper gap-5">
@@ -40,7 +40,7 @@ const Navbar = (props: any) => {
               onClick={props.ToggleTheme}
               aria-label='Toggle theme'
             >
-              Toggle theme
+             Theme
             </button>
 
 
@@ -64,7 +64,7 @@ const Navbar = (props: any) => {
 
         
 
-        <div className={`justify-evenly h-full items-center transition-all ease-in-out ${ShowProgressBar ? "flex" : "hidden"}`}>
+        <div className={`justify-center gap-2 md:gap-10 h-full items-center transition-all ease-in-out ${ShowProgressBar ? "flex" : "hidden"}`}>
 
 
 
