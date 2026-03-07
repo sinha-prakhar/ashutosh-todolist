@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import { motion } from "motion/react";
 
 
 
@@ -64,28 +65,37 @@ const Navbar = (props: any) => {
 
         
 
-        <div className={`justify-center gap-2 md:gap-10 h-full items-center transition-all ease-in-out ${ShowProgressBar ? "flex" : "hidden"}`}>
+        <motion.div
+         layout
+                       initial={{
+                        scale: 0.00,
+                        
+                       }}
+              animate="visible"
+              exit="exit"
+              whileInView={{
+                scale: 1.02
+              }}
 
-
+        className={`justify-center gap-5 md:gap-10 h-full items-center  ${ShowProgressBar ? "flex opacity-100 translate-y-0 scale-100 transition ease-in transform duration-1000" : "hidden opacity-0 -translate-y-4 scale-95 "}`}>
 
           <div className='items-center text-2xl'>
-            <div className="text-white align-middle w-30 items-center flex justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl">All</div>
-            <div className="text-white align-middle w-30 items-center flex justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl">{props.alltodosLength}</div>
+            <div className="text-white align-center overflow-hidden m-0 p-0 items-center flex justify-center hover:scale-105 hover:shadow-xl font-[2px]">All</div>
+            <div className="text-white align-center overflow-hidden m-0 p-0 items-center flex justify-center hover:scale-105 hover:shadow-xl font-[2px]">{props.alltodosLength}</div>
+          </div>
+
+          <div className='items-center text-2xl border-r-2 border-l-2 p-2 border-white w-30'>
+            <div className="text-white align-center overflow-hidden m-0 p-0 items-center flex justify-center hover:scale-105 hover:shadow-xl font-[2px]">Active</div>
+            <div className="text-white align-center overflow-hidden m-0 p-0 items-center flex justify-center hover:scale-105 hover:shadow-xl font-[2px]">{props.progress}</div>
+          </div>
+
+          <div className='items-center text-2xl'>
+            <div className="text-white align-center overflow-hidden m-0 p-0 items-center flex justify-center hover:scale-105 hover:shadow-xl font-[2px]">Completed</div>
+            <div className="text-white align-center overflow-hidden m-0 p-0 items-center flex justify-center hover:scale-105 hover:shadow-xl font-[2px]">{props.completedCount}</div>
           </div>
 
 
-          <div className='items-center text-2xl'>
-            <div className="text-white align-middle w-30 items-center flex justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl">Active</div>
-            <div className="text-white align-middle w-30 items-center flex justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl">{props.progress}</div>
-          </div>
-
-          <div className='items-center text-2xl'>
-            <div className="text-white align-middle w-30 items-center flex justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl">Completed</div>
-            <div className="text-white align-middle w-30 items-center flex justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl">{props.completedCount}</div>
-          </div>
-
-
-        </div>
+        </motion.div>
 
       </nav>
     </header>

@@ -187,10 +187,12 @@ const Page = () => {
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 2, y: 0 }}
         transition={{ duration: 0.7 }}
-        className={`h-screen w-full ${theme.backgroundTheme}`}>
+        className={`${theme.backgroundTheme}`}>
 
 
         <Navbar Theme={theme.NavbarTheme} todos={todos} alltodosLength={filteredTodos.length} setTodos={setTodos} ToggleTheme={ToggleTheme} toggleThemeButtonBG={theme.toggleThemeButtonBG} completedCount={completedCount} progress={progress}/>
+
+
         <main>
 
           <ToastContainer />
@@ -274,6 +276,7 @@ const Page = () => {
                 </motion.button>
 
                 <motion.button
+                
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setFilter("completed")}
@@ -299,7 +302,7 @@ const Page = () => {
                         {filter === "all"
                           ? "No todos yet."
                           : filter === "active"
-                            ? "No active tasks"
+                            ? "No active tasks."
                             : "No completed tasks yet."}
                       </p>
                     </div>
@@ -361,10 +364,10 @@ hover:bg-zinc-200 hover:-translate-y-1 duration-300 hover:scale-105 hover:shadow
 
         </main>
 
-      </motion.div>
-        <footer className='static bottom-0 flex justify-center items-center w-full h-20 bg-black text-white'>
+        <footer className={`flex justify-center items-center w-full h-20 bg-black text-white fixed bottom-0  mt-20`}>
           This website uses your browser localStorage
         </footer>
+      </motion.div>
     </>
   )
 }
