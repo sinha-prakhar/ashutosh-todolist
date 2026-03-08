@@ -41,7 +41,7 @@ const Navbar = (props: any) => {
               onClick={props.ToggleTheme}
               aria-label='Toggle theme'
             >
-             Theme
+              Theme
             </button>
 
 
@@ -63,21 +63,21 @@ const Navbar = (props: any) => {
 
         <div className="h-px w-full mt-2 mb-2 bg-white"></div>
 
-        
+
 
         <motion.div
-         layout
-                       initial={{
-                        scale: 0.00,
-                        
-                       }}
-              animate="visible"
-              exit="exit"
-              whileInView={{
-                scale: 1.02
-              }}
+          layout
+          initial={{
+            scale: 0.00,
 
-        className={`justify-center gap-5 md:gap-10 h-full items-center  ${ShowProgressBar ? "flex opacity-100 translate-y-0 scale-100 transition ease-in transform duration-1000" : "hidden opacity-0 -translate-y-4 scale-95 "}`}>
+          }}
+          animate="visible"
+          exit="exit"
+          whileInView={{
+            scale: 1.02
+          }}
+
+          className={`justify-center gap-5 md:gap-10 h-full items-center  ${ShowProgressBar ? "flex opacity-100 translate-y-0 scale-100 transition ease-in transform duration-1000" : "hidden opacity-0 -translate-y-4 scale-95 "}`}>
 
           <div className='items-center text-2xl'>
             <div className="text-white align-center overflow-hidden m-0 p-0 items-center flex justify-center hover:scale-105 hover:shadow-xl font-[2px]">All</div>

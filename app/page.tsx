@@ -193,7 +193,7 @@ const Page = () => {
         <Navbar Theme={theme.NavbarTheme} todos={todos} alltodosLength={filteredTodos.length} setTodos={setTodos} ToggleTheme={ToggleTheme} toggleThemeButtonBG={theme.toggleThemeButtonBG} completedCount={completedCount} progress={progress}/>
 
 
-        <main>
+        <main className='h-screen w-full'>
 
           <ToastContainer />
           <div className={`helper w-full mt-30 flex p-1.5 active:scale-99 text-black`}>
@@ -364,9 +364,9 @@ hover:bg-zinc-200 hover:-translate-y-1 duration-300 hover:scale-105 hover:shadow
 
         </main>
 
-        {/* <footer className={`flex justify-center items-center w-full h-20 bg-black text-white fixed bottom-0  mt-20`}>
+        <footer className={`flex justify-center items-center w-full h-20 bg-black text-white`}>
           This website uses your browser localStorage
-        </footer> */}
+        </footer>
       </motion.div>
     </>
   )
